@@ -1,0 +1,231 @@
+VT100 / ANSI ESCAPE SEQUENCE REFERENCE
+======================================
+
+All sequences start with ESC (ASCII 27, \033 in octal, \x1B in hex)
+Format: ESC [ <parameters> <command>
+
+
+CURSOR POSITIONING
+------------------
+ESC[H           - Move cursor to home position (0, 0)
+ESC[{row};{col}H - Move cursor to row, col (1-indexed)
+ESC[{row};{col}f - Same as H (alternative)
+ESC[{n}A        - Move cursor up n lines
+ESC[{n}B        - Move cursor down n lines
+ESC[{n}C        - Move cursor forward n columns
+ESC[{n}D        - Move cursor backward n columns
+ESC[{n}E        - Move cursor to beginning of line, n lines down
+ESC[{n}F        - Move cursor to beginning of line, n lines up
+ESC[{n}G        - Move cursor to column n
+ESC[6n          - Query cursor position (response: ESC[{row};{col}R)
+ESC[s           - Save cursor position
+ESC[u           - Restore cursor position
+
+
+CURSOR VISIBILITY
+-----------------
+ESC[?25h        - Show cursor
+ESC[?25l        - Hide cursor
+
+
+ERASE FUNCTIONS
+---------------
+ESC[J           - Clear from cursor to end of screen
+ESC[0J          - Clear from cursor to end of screen (same as above)
+ESC[1J          - Clear from cursor to beginning of screen
+ESC[2J          - Clear entire screen
+ESC[3J          - Clear entire screen and scrollback buffer
+ESC[K           - Clear from cursor to end of line
+ESC[0K          - Clear from cursor to end of line (same as above)
+ESC[1K          - Clear from cursor to beginning of line
+ESC[2K          - Clear entire line
+
+
+TEXT FORMATTING / ATTRIBUTES
+-----------------------------
+ESC[0m          - Reset all attributes
+ESC[1m          - Bold/bright
+ESC[2m          - Dim
+ESC[3m          - Italic
+ESC[4m          - Underline
+ESC[5m          - Blinking
+ESC[7m          - Reverse (swap foreground and background)
+ESC[8m          - Hidden/invisible
+ESC[9m          - Strikethrough
+ESC[21m         - Double underline
+ESC[22m         - Normal intensity (not bold, not dim)
+ESC[23m         - Not italic
+ESC[24m         - Not underlined
+ESC[25m         - Not blinking
+ESC[27m         - Not reversed
+ESC[28m         - Not hidden
+ESC[29m         - Not strikethrough
+
+
+FOREGROUND COLORS (STANDARD)
+-----------------------------
+ESC[30m         - Black
+ESC[31m         - Red
+ESC[32m         - Green
+ESC[33m         - Yellow
+ESC[34m         - Blue
+ESC[35m         - Magenta
+ESC[36m         - Cyan
+ESC[37m         - White
+ESC[39m         - Default foreground color
+
+
+BACKGROUND COLORS (STANDARD)
+-----------------------------
+ESC[40m         - Black
+ESC[41m         - Red
+ESC[42m         - Green
+ESC[43m         - Yellow
+ESC[44m         - Blue
+ESC[45m         - Magenta
+ESC[46m         - Cyan
+ESC[47m         - White
+ESC[49m         - Default background color
+
+
+FOREGROUND COLORS (BRIGHT/INTENSE)
+-----------------------------------
+ESC[90m         - Bright Black (Gray)
+ESC[91m         - Bright Red
+ESC[92m         - Bright Green
+ESC[93m         - Bright Yellow
+ESC[94m         - Bright Blue
+ESC[95m         - Bright Magenta
+ESC[96m         - Bright Cyan
+ESC[97m         - Bright White
+
+
+BACKGROUND COLORS (BRIGHT/INTENSE)
+-----------------------------------
+ESC[100m        - Bright Black (Gray)
+ESC[101m        - Bright Red
+ESC[102m        - Bright Green
+ESC[103m        - Bright Yellow
+ESC[104m        - Bright Blue
+ESC[105m        - Bright Magenta
+ESC[106m        - Bright Cyan
+ESC[107m        - Bright White
+
+
+256 COLOR MODE
+--------------
+ESC[38;5;{n}m   - Set foreground color (n = 0-255)
+ESC[48;5;{n}m   - Set background color (n = 0-255)
+
+Color ranges:
+  0-7:     Standard colors
+  8-15:    Bright colors
+  16-231:  216 color cube (6x6x6)
+  232-255: Grayscale
+
+
+RGB TRUE COLOR (24-bit)
+------------------------
+ESC[38;2;{r};{g};{b}m - Set foreground RGB color (r,g,b = 0-255)
+ESC[48;2;{r};{g};{b}m - Set background RGB color (r,g,b = 0-255)
+
+
+SCREEN MODES
+------------
+ESC[={mode}h    - Set screen mode
+ESC[={mode}l    - Reset screen mode
+ESC[?{mode}h    - Set private mode
+ESC[?{mode}l    - Reset private mode
+
+Common modes:
+ESC[?1h         - Application cursor keys
+ESC[?1l         - Normal cursor keys
+ESC[?25h        - Show cursor
+ESC[?25l        - Hide cursor
+ESC[?47h        - Save screen
+ESC[?47l        - Restore screen
+ESC[?1049h      - Enable alternative buffer
+ESC[?1049l      - Disable alternative buffer
+
+
+SCROLLING
+---------
+ESC[{n}S        - Scroll up n lines
+ESC[{n}T        - Scroll down n lines
+ESC[{top};{bottom}r - Set scrolling region (rows)
+
+
+TABS
+----
+ESC[{n}I        - Move forward n tab stops
+ESC[{n}Z        - Move backward n tab stops
+ESC[3g          - Clear all tab stops
+ESC[0g          - Clear tab stop at current position
+ESC H           - Set tab stop at current position
+
+
+KEYBOARD
+--------
+ESC[{code};...;{code}p - Set keyboard strings
+
+
+ALTERNATE CHARACTER SETS
+-------------------------
+ESC(0           - Select line drawing character set
+ESC(B           - Select default character set
+
+
+LINE DRAWING CHARACTERS (with ESC(0 active)
+--------------------------------------------
+j               - ┘ (lower right corner)
+k               - ┐ (upper right corner)
+l               - ┌ (upper left corner)
+m               - └ (lower left corner)
+n               - ┼ (cross)
+q               - ─ (horizontal line)
+t               - ├ (left tee)
+u               - ┤ (right tee)
+v               - ┴ (bottom tee)
+w               - ┬ (top tee)
+x               - │ (vertical line)
+
+
+COMBINING ATTRIBUTES
+--------------------
+Multiple attributes can be combined in one sequence:
+ESC[1;31;44m    - Bold, Red foreground, Blue background
+ESC[0;32;1m     - Reset, then Green and Bold
+
+
+COMMON USAGE EXAMPLES
+---------------------
+Clear screen and home:
+    printf("\033[2J\033[H");
+
+Set position (row 10, col 20):
+    printf("\033[10;20H");
+
+Red text on white background:
+    printf("\033[31;47m");
+
+Bold green text:
+    printf("\033[1;32m");
+
+Reset all formatting:
+    printf("\033[0m");
+
+Hide cursor during drawing:
+    printf("\033[?25l");
+    // ... draw content ...
+    printf("\033[?25h");
+
+
+NOTES
+-----
+- Parameters in {} are numeric values
+- Parameters in [] are optional
+- Default value for most numeric parameters is 1
+- Always reset attributes (ESC[0m) when done
+- Row and column counting starts at 1, not 0
+- Not all terminals support all features
+- Some older terminals may only support basic colors (30-37, 40-47)
