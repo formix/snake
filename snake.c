@@ -223,11 +223,11 @@ clock_t consistent_sleep(long period_ms, clock_t last_time)
 
 void print_score(int playfield_height, int playfield_width, int score, int snake_length)
 {
-    set_position(3, playfield_width + 3);
+    set_position(1, playfield_width + 3);
     set_color(FG_WHITE, BG_BLACK);
-    printf("Snake Length: %d", snake_length);
-    set_position(4, playfield_width + 3);
-    printf("       Score: %d", score);
+    printf("Length: %d", snake_length);
+    set_position(2, playfield_width + 3);
+    printf("Score:  %d", score);
     fflush(stdout);
 }
 
