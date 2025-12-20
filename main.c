@@ -60,44 +60,52 @@ int main(int argc, char **argv) {
 
     print_score(playfield_height, playfield_width, score, snake_length);
 
+    bool direction_changed = false;
     clock_t last_time = clock();
 
     while (!game_over) {
         int key = read_key();
         game_over = (key == 27);
 
-        switch (key) {
-            case 'w':
-            case 'W':
-                if (current_direction != DIRECTION_DOWN) {
-                    current_direction = DIRECTION_UP;
-                }
-                break;
-            case 's':
-            case 'S':
-                if (current_direction != DIRECTION_UP) {
-                    current_direction = DIRECTION_DOWN;
-                }
-                break;
-            case 'a':
-            case 'A':
-                if (current_direction != DIRECTION_RIGHT) {
-                    current_direction = DIRECTION_LEFT;
-                }
-                break;
-            case 'd':
-            case 'D':
-                if (current_direction != DIRECTION_LEFT) {
-                    current_direction = DIRECTION_RIGHT;
-                }
-                break;
-            default:
-                break;
+        if (!direction_changed) {
+            switch (key) {
+                case 'w':
+                case 'W':
+                    if (current_direction != DIRECTION_DOWN) {
+                        current_direction = DIRECTION_UP;
+                        direction_changed = true;
+                    }
+                    break;
+                case 's':
+                case 'S':
+                    if (current_direction != DIRECTION_UP) {
+                        current_direction = DIRECTION_DOWN;
+                        direction_changed = true;
+                    }
+                    break;
+                case 'a':
+                case 'A':
+                    if (current_direction != DIRECTION_RIGHT) {
+                        current_direction = DIRECTION_LEFT;
+                        direction_changed = true;
+                    }
+                    break;
+                case 'd':
+                case 'D':
+                    if (current_direction != DIRECTION_LEFT) {
+                        current_direction = DIRECTION_RIGHT;
+                        direction_changed = true;
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
 
         last_time = consistent_sleep(LOOP_DELAY, last_time);
         time_counter += LOOP_DELAY;
         if (time_counter >= 150) {
+            direction_changed = false;
             time_counter = 0;
             snake_head = update_snake(snake_head, current_direction, snake_length);
             if (check_wall_collision(snake_head, playfield_height, playfield_width)) {
