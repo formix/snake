@@ -104,7 +104,7 @@ int main(int argc, char **argv) {
 
         last_time = consistent_sleep(LOOP_DELAY, last_time);
         time_counter += LOOP_DELAY;
-        if (direction_changed || time_counter >= 200) {
+        if (direction_changed || time_counter >= 250) {
             direction_changed = false;
             time_counter = 0;
             snake_head = update_snake(snake_head, current_direction, snake_length);
