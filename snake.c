@@ -247,9 +247,6 @@ int pick_number_of_segments()
 static int terminal_initialized = 0;
 
 int read_key() {
-    int ch;
-    int bytes_available;
-
     // Initialize terminal settings on first call
     if (!terminal_initialized) {
         static struct termios current_termios;
@@ -260,11 +257,10 @@ int read_key() {
     }
 
     // Check if bytes are available in the keyboard buffer
+    int bytes_available;
     ioctl(STDIN_FILENO, FIONREAD, &bytes_available);
-
     if (bytes_available > 0) {
-        ch = getchar();
-        return ch;
+        return getchar();
     }
 
     return -1; // No key pressed
