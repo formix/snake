@@ -243,21 +243,20 @@ int random_segment_to_add()
     }
 }
 
+// Static variables to store terminal state
+static int terminal_initialized = 0;
+
 int read_key() {
-    static struct termios oldt, newt;
-    static int initialized = 0;
     int ch;
     int bytes_available;
 
     // Initialize terminal settings on first call
-    if (!initialized) {
-        tcgetattr(STDIN_FILENO, &oldt);
-        newt = oldt;
-        newt.c_lflag &= ~(ICANON | ECHO);
-        newt.c_cc[VMIN] = 0;
-        newt.c_cc[VTIME] = 0;
-        tcsetattr(STDIN_FILENO, TCSANOW, &newt);
-        initialized = 1;
+    if (!terminal_initialized) {
+        static struct termios current_termios;
+        tcgetattr(STDIN_FILENO, &current_termios);
+        current_termios.c_lflag &= ~(ICANON | ECHO);
+        tcsetattr(STDIN_FILENO, TCSANOW, &current_termios);
+        terminal_initialized = 1;
     }
 
     // Check if bytes are available in the keyboard buffer
@@ -269,6 +268,16 @@ int read_key() {
     }
 
     return -1; // No key pressed
+}
+
+void restore_terminal() {
+    if (terminal_initialized) {
+        static struct termios current_termios;
+        tcgetattr(STDIN_FILENO, &current_termios);
+        current_termios.c_lflag |= (ICANON | ECHO);
+        tcsetattr(STDIN_FILENO, TCSANOW, &current_termios);
+        terminal_initialized = 0;
+    }
 }
 
 void draw_playfield(int height, int width) {

@@ -132,6 +132,7 @@ int main(int argc, char **argv) {
     printf("Game Over! Thanks for playing.\n\n");
     delete_snake(snake_head);
     show_cursor();
+    restore_terminal();
 
 
     return 0;

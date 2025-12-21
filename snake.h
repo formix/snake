@@ -42,6 +42,7 @@ typedef enum Direction Direction;
 
 
 int read_key();
+void restore_terminal();
 void draw_playfield(int height, int width);
 
 Segment* initialize_snake(int start_row, int start_col, size_t initial_length);
