@@ -60,7 +60,7 @@ bool check_apple_collision(Segment* head, int apple_row, int apple_col);
 void spawn_apple(int playfield_height, int playfield_width, Segment* snake_head, int* apple_row, int* apple_col);
 clock_t consistent_sleep(long period_ms, clock_t last_time);
 void print_score(int playfield_height, int playfield_width, int score, int snake_length);
-int random_segment_to_add();
+int pick_number_of_segments();
 
 #endif
 

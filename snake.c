@@ -231,12 +231,12 @@ void print_score(int playfield_height, int playfield_width, int score, int snake
     fflush(stdout);
 }
 
-int random_segment_to_add()
+int pick_number_of_segments()
 {
     int r = rand() % 100;
-    if (r < 25) {
+    if (r < 17) {
         return 1;
-    } else if (r < 75) {
+    } else if (r < 67) {
         return 2;
     } else {
         return 3;
@@ -255,7 +255,7 @@ int read_key() {
         static struct termios current_termios;
         tcgetattr(STDIN_FILENO, &current_termios);
         current_termios.c_lflag &= ~(ICANON | ECHO);
-        tcsetattr(STDIN_FILENO, TCSANOW, &current_termios);
+        tcsetattr(STDIN_FILENO, TCSAFLUSH, &current_termios);
         terminal_initialized = 1;
     }
 

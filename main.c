@@ -116,7 +116,7 @@ int main(int argc, char **argv) {
             }
             if (check_apple_collision(snake_head, apple_row, apple_col)) {
                 score += snake_length;
-                int segment_count = random_segment_to_add();
+                int segment_count = pick_number_of_segments();
                 snake_length += add_segment(snake_head, segment_count);
                 spawn_apple(playfield_height, playfield_width, snake_head, &apple_row, &apple_col);
                 print_score(playfield_height, playfield_width, score, snake_length);
