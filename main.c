@@ -48,16 +48,16 @@ int main(int argc, char **argv) {
     Direction current_direction = DIRECTION_NONE;
     int snake_length = 5;
     int score = 0;
-    int time_counter = 0;
 
+    int time_counter = 0;
     bool game_over = false;
+
     Segment *snake_head = initialize_snake(playfield_height / 2, playfield_width / 2, snake_length);
     display(snake_head->row, snake_head->col, '*', FG_GREEN);
 
     int apple_row;
     int apple_col;
     spawn_apple(playfield_height, playfield_width, snake_head, &apple_row, &apple_col);
-
     print_score(playfield_height, playfield_width, score, snake_length);
 
     bool direction_changed = false;
@@ -71,28 +71,28 @@ int main(int argc, char **argv) {
             switch (key) {
                 case 'w':
                 case 'W':
-                    if (current_direction != DIRECTION_DOWN) {
+                    if (current_direction != DIRECTION_DOWN && current_direction != DIRECTION_UP) {
                         current_direction = DIRECTION_UP;
                         direction_changed = true;
                     }
                     break;
                 case 's':
                 case 'S':
-                    if (current_direction != DIRECTION_UP) {
+                    if (current_direction != DIRECTION_UP && current_direction != DIRECTION_DOWN) {
                         current_direction = DIRECTION_DOWN;
                         direction_changed = true;
                     }
                     break;
                 case 'a':
                 case 'A':
-                    if (current_direction != DIRECTION_RIGHT) {
+                    if (current_direction != DIRECTION_RIGHT && current_direction != DIRECTION_LEFT) {
                         current_direction = DIRECTION_LEFT;
                         direction_changed = true;
                     }
                     break;
                 case 'd':
                 case 'D':
-                    if (current_direction != DIRECTION_LEFT) {
+                    if (current_direction != DIRECTION_LEFT && current_direction != DIRECTION_RIGHT) {
                         current_direction = DIRECTION_RIGHT;
                         direction_changed = true;
                     }
@@ -104,7 +104,7 @@ int main(int argc, char **argv) {
 
         last_time = consistent_sleep(LOOP_DELAY, last_time);
         time_counter += LOOP_DELAY;
-        if (time_counter >= 150) {
+        if (direction_changed || time_counter >= 200) {
             direction_changed = false;
             time_counter = 0;
             snake_head = update_snake(snake_head, current_direction, snake_length);
@@ -131,8 +131,8 @@ int main(int argc, char **argv) {
     set_color(FG_WHITE, BG_BLACK);
     printf("Game Over! Thanks for playing.\n\n");
     delete_snake(snake_head);
-
     show_cursor();
+
 
     return 0;
 }
