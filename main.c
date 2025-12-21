@@ -67,39 +67,37 @@ int main(int argc, char **argv) {
         int key = read_key();
         game_over = (key == 27);
 
-        if (!direction_changed) {
-            switch (key) {
-                case 'w':
-                case 'W':
-                    if (current_direction != DIRECTION_DOWN && current_direction != DIRECTION_UP) {
-                        current_direction = DIRECTION_UP;
-                        direction_changed = true;
-                    }
-                    break;
-                case 's':
-                case 'S':
-                    if (current_direction != DIRECTION_UP && current_direction != DIRECTION_DOWN) {
-                        current_direction = DIRECTION_DOWN;
-                        direction_changed = true;
-                    }
-                    break;
-                case 'a':
-                case 'A':
-                    if (current_direction != DIRECTION_RIGHT && current_direction != DIRECTION_LEFT) {
-                        current_direction = DIRECTION_LEFT;
-                        direction_changed = true;
-                    }
-                    break;
-                case 'd':
-                case 'D':
-                    if (current_direction != DIRECTION_LEFT && current_direction != DIRECTION_RIGHT) {
-                        current_direction = DIRECTION_RIGHT;
-                        direction_changed = true;
-                    }
-                    break;
-                default:
-                    break;
-            }
+        switch (key) {
+            case 'w':
+            case 'W':
+                if (current_direction != DIRECTION_DOWN && current_direction != DIRECTION_UP) {
+                    current_direction = DIRECTION_UP;
+                    direction_changed = true;
+                }
+                break;
+            case 's':
+            case 'S':
+                if (current_direction != DIRECTION_UP && current_direction != DIRECTION_DOWN) {
+                    current_direction = DIRECTION_DOWN;
+                    direction_changed = true;
+                }
+                break;
+            case 'a':
+            case 'A':
+                if (current_direction != DIRECTION_RIGHT && current_direction != DIRECTION_LEFT) {
+                    current_direction = DIRECTION_LEFT;
+                    direction_changed = true;
+                }
+                break;
+            case 'd':
+            case 'D':
+                if (current_direction != DIRECTION_LEFT && current_direction != DIRECTION_RIGHT) {
+                    current_direction = DIRECTION_RIGHT;
+                    direction_changed = true;
+                }
+                break;
+            default:
+                break;
         }
 
         last_time = consistent_sleep(LOOP_DELAY, last_time);
