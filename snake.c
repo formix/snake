@@ -35,19 +35,15 @@
 void parse_options(int argc, char **argv, int *playfield_height, int *playfield_width)
 {
     int opt;
+    int height = 0;
+    int width = 0;
     while ((opt = getopt(argc, argv, "h:w:?")) != -1) {
         switch (opt) {
             case 'h':
-                *playfield_height = atoi(optarg);
-                if (*playfield_height < 5) {
-                    *playfield_height = 5; // Minimum height
-                }
+                height = atoi(optarg);
                 break;
             case 'w':
-                *playfield_width = atoi(optarg);
-                if (*playfield_width < 5) {
-                    *playfield_width = 5; // Minimum width
-                }
+                width = atoi(optarg);
                 break;
             case '?':
                 printf("Usage: %s [-h height] [-w width]\n", argv[0]);
@@ -57,6 +53,25 @@ void parse_options(int argc, char **argv, int *playfield_height, int *playfield_
                 // Ignore unknown options
                 break;
         }
+    }
+
+    if (height > 0) {
+        *playfield_height = height;
+        if (width == 0) {
+            *playfield_width = height * 2;
+        }
+    }
+    if (width > 0) {
+        *playfield_width = width;
+        if (height == 0) {
+            *playfield_height = width / 2;
+        }
+    }
+    if (*playfield_height < 5) {
+        *playfield_height = 5;
+    }
+    if (*playfield_width < 10) {
+        *playfield_width = 10;
     }
 }
 
