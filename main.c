@@ -34,8 +34,10 @@
 
 int main(int argc, char **argv) {
 
-    const int playfield_height = 10;
-    const int playfield_width = 20;
+    int playfield_height = 10;
+    int playfield_width = 20;
+
+    parse_options(argc, argv, &playfield_height, &playfield_width);
 
     srand(time(NULL));
 

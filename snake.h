@@ -40,6 +40,7 @@ enum Direction {
 };
 typedef enum Direction Direction;
 
+void parse_options(int argc, char **argv, int *playfield_height, int *playfield_width);
 
 int read_key();
 void restore_terminal();

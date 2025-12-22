@@ -28,6 +28,38 @@
 
 #include "snake.h"
 #include "asciiart.h"
+#include <bits/getopt_core.h>
+
+
+
+void parse_options(int argc, char **argv, int *playfield_height, int *playfield_width)
+{
+    int opt;
+    while ((opt = getopt(argc, argv, "h:w:?")) != -1) {
+        switch (opt) {
+            case 'h':
+                *playfield_height = atoi(optarg);
+                if (*playfield_height < 5) {
+                    *playfield_height = 5; // Minimum height
+                }
+                break;
+            case 'w':
+                *playfield_width = atoi(optarg);
+                if (*playfield_width < 5) {
+                    *playfield_width = 5; // Minimum width
+                }
+                break;
+            case '?':
+                printf("Usage: %s [-h height] [-w width]\n", argv[0]);
+                exit(EXIT_SUCCESS);
+                break;
+            default:
+                // Ignore unknown options
+                break;
+        }
+    }
+}
+
 
 Segment *initialize_snake(int start_row, int start_col, size_t initial_length)
 {
@@ -246,7 +278,8 @@ int pick_number_of_segments()
 // Static variables to store terminal state
 static int terminal_initialized = 0;
 
-int read_key() {
+int read_key()
+{
     // Initialize terminal settings on first call
     if (!terminal_initialized) {
         static struct termios current_termios;
