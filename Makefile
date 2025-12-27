@@ -59,8 +59,12 @@ publish-doc:
 		git push
 	@echo "Documentation published to GitHub Pages"
 
+# Install target
+install: $(OUTDIR)/$(TARGET)
+	install -m 0755 $(OUTDIR)/$(TARGET) /usr/bin/$(TARGET)
+
 # Phony targets
-.PHONY: all clean clean-doc clean-all debug doc publish-doc
+.PHONY: all clean clean-doc clean-all debug doc publish-doc install
 
 debug:
 	$(MAKE) DEBUG=1
