@@ -11,7 +11,7 @@ var searchData=
   ['development_20dependencies_8',['Development Dependencies',['../index.html#autotoc_md27',1,'']]],
   ['development_20environment_9',['Setting Up the Development Environment',['../index.html#autotoc_md16',1,'']]],
   ['development_20tools_10',['Development Tools',['../index.html#autotoc_md13',1,'']]],
-  ['direction_11',['direction',['../snake_8h.html#a224b9163917ac32fc95a60d8c1eec3aa',1,'Direction:&#160;snake.h'],['../snake_8h.html#ad196bf510b28a9ba4c872e96dfd16f92',1,'Direction:&#160;snake.h']]],
+  ['direction_11',['direction',['../snake_8h.html#ad196bf510b28a9ba4c872e96dfd16f92',1,'Direction:&#160;snake.h'],['../snake_8h.html#a224b9163917ac32fc95a60d8c1eec3aa',1,'Direction:&#160;snake.h']]],
   ['direction_5fdown_12',['DIRECTION_DOWN',['../snake_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa56d7e58d244b905d940d3524ba575edb',1,'snake.h']]],
   ['direction_5fleft_13',['DIRECTION_LEFT',['../snake_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa63f0a6a01ce93598ce74f376955c2a17',1,'snake.h']]],
   ['direction_5fnone_14',['DIRECTION_NONE',['../snake_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa8014a4c7dd2e1ab266e6b98e7c9b5780',1,'snake.h']]],
@@ -21,7 +21,5 @@ var searchData=
   ['documentation_18',['documentation',['../index.html#autotoc_md25',1,'Generate HTML Documentation'],['../index.html#autotoc_md24',1,'Generating Documentation']]],
   ['documentation_20style_19',['Code Documentation Style',['../index.html#autotoc_md26',1,'']]],
   ['documentation_20tools_20',['Documentation Tools',['../index.html#autotoc_md15',1,'']]],
-  ['draw_5fhead_5fsegment_21',['draw_head_segment',['../snake_8c.html#af78449e6ad9d70d5e5549bbb58bd1752',1,'draw_head_segment(Segment *head, int row, int col):&#160;snake.c'],['../snake_8h.html#af78449e6ad9d70d5e5549bbb58bd1752',1,'draw_head_segment(Segment *head, int row, int col):&#160;snake.c']]],
-  ['draw_5fplayfield_22',['draw_playfield',['../snake_8h.html#ae0a0cbfca07c070266e8adc4af731e65',1,'draw_playfield(int height, int width):&#160;snake.c'],['../snake_8c.html#ae0a0cbfca07c070266e8adc4af731e65',1,'draw_playfield(int height, int width):&#160;snake.c']]],
-  ['draw_5ftail_5fsegments_23',['draw_tail_segments',['../snake_8h.html#a0062e3d0ed83b674353ef9637680c731',1,'draw_tail_segments(Segment *head, size_t snake_size):&#160;snake.c'],['../snake_8c.html#a0062e3d0ed83b674353ef9637680c731',1,'draw_tail_segments(Segment *head, size_t snake_size):&#160;snake.c']]]
+  ['draw_5fplayfield_21',['draw_playfield',['../snake_8h.html#ae0a0cbfca07c070266e8adc4af731e65',1,'draw_playfield(int height, int width):&#160;snake.c'],['../snake_8c.html#ae0a0cbfca07c070266e8adc4af731e65',1,'draw_playfield(int height, int width):&#160;snake.c']]]
 ];

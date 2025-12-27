@@ -118,15 +118,15 @@ Functions</h2></td></tr>
 <tr class="memitem:abee2fa75fd82ba92b7a002363e2627cb" id="r_abee2fa75fd82ba92b7a002363e2627cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSegment.html">Segment</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snake_8c.html#abee2fa75fd82ba92b7a002363e2627cb">create_segment</a> (int row, int col)</td></tr>
 <tr class="memdesc:abee2fa75fd82ba92b7a002363e2627cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new snake segment.  <br /></td></tr>
 <tr class="separator:abee2fa75fd82ba92b7a002363e2627cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af78449e6ad9d70d5e5549bbb58bd1752" id="r_af78449e6ad9d70d5e5549bbb58bd1752"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSegment.html">Segment</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snake_8c.html#af78449e6ad9d70d5e5549bbb58bd1752">draw_head_segment</a> (<a class="el" href="structSegment.html">Segment</a> *head, int row, int col)</td></tr>
-<tr class="memdesc:af78449e6ad9d70d5e5549bbb58bd1752"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the snake's head segment at a new position.  <br /></td></tr>
-<tr class="separator:af78449e6ad9d70d5e5549bbb58bd1752"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0062e3d0ed83b674353ef9637680c731" id="r_a0062e3d0ed83b674353ef9637680c731"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snake_8c.html#a0062e3d0ed83b674353ef9637680c731">draw_tail_segments</a> (<a class="el" href="structSegment.html">Segment</a> *head, size_t snake_size)</td></tr>
-<tr class="memdesc:a0062e3d0ed83b674353ef9637680c731"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw all tail segments of the snake.  <br /></td></tr>
-<tr class="separator:a0062e3d0ed83b674353ef9637680c731"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd85b133c355687f32736c54c7e41f3a" id="r_afd85b133c355687f32736c54c7e41f3a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSegment.html">Segment</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snake_8c.html#afd85b133c355687f32736c54c7e41f3a">update_snake</a> (<a class="el" href="structSegment.html">Segment</a> *head, <a class="el" href="snake_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> dir, size_t snake_size)</td></tr>
-<tr class="memdesc:afd85b133c355687f32736c54c7e41f3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the snake's position based on direction.  <br /></td></tr>
-<tr class="separator:afd85b133c355687f32736c54c7e41f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8c8fffad4792c7d22ae0eecc6576bfd" id="r_af8c8fffad4792c7d22ae0eecc6576bfd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSegment.html">Segment</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snake_8c.html#af8c8fffad4792c7d22ae0eecc6576bfd">move_head_segment</a> (<a class="el" href="structSegment.html">Segment</a> *head, int row, int col)</td></tr>
+<tr class="memdesc:af8c8fffad4792c7d22ae0eecc6576bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the snake's head segment to a new position.  <br /></td></tr>
+<tr class="separator:af8c8fffad4792c7d22ae0eecc6576bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af73bda04b70ef1604c1ebfa65fb80dc6" id="r_af73bda04b70ef1604c1ebfa65fb80dc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snake_8c.html#af73bda04b70ef1604c1ebfa65fb80dc6">move_tail_segments</a> (<a class="el" href="structSegment.html">Segment</a> *head, size_t snake_size)</td></tr>
+<tr class="memdesc:af73bda04b70ef1604c1ebfa65fb80dc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move all tail segments of the snake.  <br /></td></tr>
+<tr class="separator:af73bda04b70ef1604c1ebfa65fb80dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0147dd0a71beddd0b85385dcc62902ac" id="r_a0147dd0a71beddd0b85385dcc62902ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSegment.html">Segment</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snake_8c.html#a0147dd0a71beddd0b85385dcc62902ac">move_snake</a> (<a class="el" href="structSegment.html">Segment</a> *head, <a class="el" href="snake_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> dir, size_t snake_size)</td></tr>
+<tr class="memdesc:a0147dd0a71beddd0b85385dcc62902ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the snake in the specified direction.  <br /></td></tr>
+<tr class="separator:a0147dd0a71beddd0b85385dcc62902ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd71314b5132856788868b8a8c1ec994" id="r_acd71314b5132856788868b8a8c1ec994"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="snake_8c.html#acd71314b5132856788868b8a8c1ec994">delete_snake</a> (<a class="el" href="structSegment.html">Segment</a> *head)</td></tr>
 <tr class="memdesc:acd71314b5132856788868b8a8c1ec994"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the entire snake and free memory.  <br /></td></tr>
 <tr class="separator:acd71314b5132856788868b8a8c1ec994"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -437,52 +437,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="af78449e6ad9d70d5e5549bbb58bd1752" name="af78449e6ad9d70d5e5549bbb58bd1752"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af78449e6ad9d70d5e5549bbb58bd1752">&#9670;&#160;</a></span>draw_head_segment()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structSegment.html">Segment</a> * draw_head_segment </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structSegment.html">Segment</a> *&#160;</td>
-          <td class="paramname"><em>head</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>row</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>col</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Draw the snake's head segment at a new position. </p>
-<p>Creates a new head segment at the specified position and links it to the existing snake.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">head</td><td>Current head of the snake </td></tr>
-    <tr><td class="paramname">row</td><td>New row position for the head </td></tr>
-    <tr><td class="paramname">col</td><td>New column position for the head </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the new head segment </dd></dl>
-
-</div>
-</div>
 <a id="ae0a0cbfca07c070266e8adc4af731e65" name="ae0a0cbfca07c070266e8adc4af731e65"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae0a0cbfca07c070266e8adc4af731e65">&#9670;&#160;</a></span>draw_playfield()</h2>
 
@@ -515,44 +469,6 @@ Variables</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">height</td><td>Height of the playfield in rows </td></tr>
     <tr><td class="paramname">width</td><td>Width of the playfield in columns </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a0062e3d0ed83b674353ef9637680c731" name="a0062e3d0ed83b674353ef9637680c731"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0062e3d0ed83b674353ef9637680c731">&#9670;&#160;</a></span>draw_tail_segments()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void draw_tail_segments </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structSegment.html">Segment</a> *&#160;</td>
-          <td class="paramname"><em>head</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>snake_size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Draw all tail segments of the snake. </p>
-<p>Renders all segments of the snake except the head on the screen.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">head</td><td>Head segment of the snake </td></tr>
-    <tr><td class="paramname">snake_size</td><td>Total number of segments in the snake </td></tr>
   </table>
   </dd>
 </dl>
@@ -622,6 +538,136 @@ Variables</h2></td></tr>
 
 <p>Initialize the terminal for raw input mode. </p>
 <p>Configures the terminal to disable canonical mode and echo, allowing character-by-character input without waiting for Enter. </p>
+
+</div>
+</div>
+<a id="af8c8fffad4792c7d22ae0eecc6576bfd" name="af8c8fffad4792c7d22ae0eecc6576bfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8c8fffad4792c7d22ae0eecc6576bfd">&#9670;&#160;</a></span>move_head_segment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structSegment.html">Segment</a> * move_head_segment </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structSegment.html">Segment</a> *&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Move the snake's head segment to a new position. </p>
+<p>Creates a new head segment at the specified position and links it to the existing snake.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Current head of the snake </td></tr>
+    <tr><td class="paramname">row</td><td>New row position for the head </td></tr>
+    <tr><td class="paramname">col</td><td>New column position for the head </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the new head segment </dd></dl>
+
+</div>
+</div>
+<a id="a0147dd0a71beddd0b85385dcc62902ac" name="a0147dd0a71beddd0b85385dcc62902ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0147dd0a71beddd0b85385dcc62902ac">&#9670;&#160;</a></span>move_snake()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structSegment.html">Segment</a> * move_snake </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structSegment.html">Segment</a> *&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="snake_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&#160;</td>
+          <td class="paramname"><em>dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>snake_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Move the snake in the specified direction. </p>
+<p>Moves the snake in the specified direction by adding a new head segment and removing the tail segment if the snake hasn't grown.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Current head of the snake </td></tr>
+    <tr><td class="paramname">dir</td><td>Direction to move </td></tr>
+    <tr><td class="paramname">snake_size</td><td>Current size of the snake </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the new head segment </dd></dl>
+
+</div>
+</div>
+<a id="af73bda04b70ef1604c1ebfa65fb80dc6" name="af73bda04b70ef1604c1ebfa65fb80dc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af73bda04b70ef1604c1ebfa65fb80dc6">&#9670;&#160;</a></span>move_tail_segments()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void move_tail_segments </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structSegment.html">Segment</a> *&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>snake_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Move all tail segments of the snake. </p>
+<p>Updates the position of all segments of the snake except the head, following the movement of the head segment.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>Head segment of the snake </td></tr>
+    <tr><td class="paramname">snake_size</td><td>Total number of segments in the snake </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -850,52 +896,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="afd85b133c355687f32736c54c7e41f3a" name="afd85b133c355687f32736c54c7e41f3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd85b133c355687f32736c54c7e41f3a">&#9670;&#160;</a></span>update_snake()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structSegment.html">Segment</a> * update_snake </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structSegment.html">Segment</a> *&#160;</td>
-          <td class="paramname"><em>head</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="snake_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&#160;</td>
-          <td class="paramname"><em>dir</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>snake_size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Update the snake's position based on direction. </p>
-<p>Moves the snake in the specified direction by adding a new head segment and removing the tail segment if the snake hasn't grown.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">head</td><td>Current head of the snake </td></tr>
-    <tr><td class="paramname">dir</td><td>Direction to move </td></tr>
-    <tr><td class="paramname">snake_size</td><td>Current size of the snake </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the new head segment </dd></dl>
-
-</div>
-</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="af737965d2e6b63a817d19cfa8e8845e9" name="af737965d2e6b63a817d19cfa8e8845e9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af737965d2e6b63a817d19cfa8e8845e9">&#9670;&#160;</a></span>terminal_initialized</h2>
@@ -925,7 +925,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="snake_8c.html">snake.c</a></li>
-    <li class="footer">Generated on Sat Dec 27 2025 04:28:45 for Snake Game by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Dec 27 2025 04:46:18 for Snake Game by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
