@@ -39,10 +39,10 @@ var searchData=
   ['box_5fsingle_5fvertical_36',['BOX_SINGLE_VERTICAL',['../asciiart_8h.html#a48b06da9fb4b89b7f71c597897225aa0',1,'asciiart.h']]],
   ['box_5fsingle_5fvertical_5fleft_37',['BOX_SINGLE_VERTICAL_LEFT',['../asciiart_8h.html#aa923d6b247ed2ccf7573945cd7c0a768',1,'asciiart.h']]],
   ['box_5fsingle_5fvertical_5fright_38',['BOX_SINGLE_VERTICAL_RIGHT',['../asciiart_8h.html#a95997149086e85ec43fa8d732eb32696',1,'asciiart.h']]],
-  ['build_39',['build',['../md_README.html#autotoc_md6',1,'Debug Build'],['../md_README.html#autotoc_md21',1,'Production Build'],['../md_README.html#autotoc_md5',1,'Standard Build']]],
-  ['build_20artifacts_40',['build artifacts',['../md_README.html#autotoc_md7',1,'Clean Build Artifacts'],['../md_README.html#autotoc_md23',1,'Clean Build Artifacts']]],
-  ['build_20tools_41',['Build Tools',['../md_README.html#autotoc_md14',1,'']]],
-  ['build_20with_20debug_20symbols_20and_20tt_20g_20tt_20flag_42',['Debug Build (with debug symbols and &lt;tt&gt;-g&lt;/tt&gt; flag)',['../md_README.html#autotoc_md22',1,'']]],
-  ['building_43',['Building',['../md_README.html#autotoc_md3',1,'']]],
-  ['building_20the_20project_44',['Building the Project',['../md_README.html#autotoc_md20',1,'']]]
+  ['build_39',['build',['../index.html#autotoc_md6',1,'Debug Build'],['../index.html#autotoc_md21',1,'Production Build'],['../index.html#autotoc_md5',1,'Standard Build']]],
+  ['build_20artifacts_40',['build artifacts',['../index.html#autotoc_md7',1,'Clean Build Artifacts'],['../index.html#autotoc_md23',1,'Clean Build Artifacts']]],
+  ['build_20tools_41',['Build Tools',['../index.html#autotoc_md14',1,'']]],
+  ['build_20with_20debug_20symbols_20and_20tt_20g_20tt_20flag_42',['Debug Build (with debug symbols and &lt;tt&gt;-g&lt;/tt&gt; flag)',['../index.html#autotoc_md22',1,'']]],
+  ['building_43',['Building',['../index.html#autotoc_md3',1,'']]],
+  ['building_20the_20project_44',['Building the Project',['../index.html#autotoc_md20',1,'']]]
 ];
