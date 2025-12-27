@@ -4,7 +4,7 @@ CFLAGS = -Wall
 DEBUG_FLAGS = -g -O0
 TARGET = snake
 OUTDIR = out
-DOCDIR = docs
+DOCDIR = $(OUTDIR)/doc
 
 # Check if DEBUG=1 is set
 ifdef DEBUG
@@ -58,9 +58,22 @@ $(DOCDIR)/html/index.html: *.c *.h
 # Documentation target
 doc: $(DOCDIR)/html/index.html
 	@echo "Documentation generated in $(DOCDIR)/html/index.html"
+	@echo "Copying documentation to ../snake-doc..."
+	@mkdir -p ../snake-doc
+	@cp -r $(DOCDIR)/html/* ../snake-doc/
+	@echo "Documentation copied to ../snake-doc"
+
+# Publish documentation to GitHub Pages
+publish-doc:
+	@echo "Committing and pushing documentation..."
+	@cd ../snake-doc && \
+		git add -A && \
+		git commit -m "Update documentation $$(date '+%Y-%m-%d %H:%M:%S')" && \
+		git push
+	@echo "Documentation published to GitHub Pages"
 
 # Phony targets
-.PHONY: all clean clean-doc clean-all debug doc
+.PHONY: all clean clean-doc clean-all debug doc publish-doc
 
 debug:
 	$(MAKE) DEBUG=1

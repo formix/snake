@@ -29,8 +29,9 @@ The project uses Make for building and managing the project. Available targets:
 | `make` or `make all` | Build the game in production mode (default target) |
 | `make debug` | Build with debug symbols (`-g -O0` flags) for use with GDB |
 | `make clean` | Remove all build artifacts from the `out/` directory |
-| `make doc` | Generate HTML API documentation to `docs/html/` |
-| `make clean-doc` | Remove the `docs/` directory and all documentation |
+| `make doc` | Generate HTML API documentation to `out/doc/html/` |
+| `make publish-doc` | Commit and push documentation to GitHub Pages (gh-pages branch) |
+| `make clean-doc` | Remove the documentation from `out/doc/` |
 | `make clean-all` | Remove both build artifacts and documentation |
 
 ### Standard Build
@@ -180,9 +181,9 @@ The project uses Doxygen to generate HTML API documentation.
 # Generate documentation
 make doc
 
-# Documentation will be created in docs/html/index.html
+# Documentation will be created in out/doc/html/index.html
 # Open in browser
-xdg-open docs/html/index.html
+xdg-open out/doc/html/index.html
 ```
 
 ### Code Documentation Style
