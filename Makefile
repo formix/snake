@@ -35,13 +35,6 @@ $(OUTDIR)/%.o: $(SRCDIR)/%.c | $(OUTDIR)
 clean:
 	rm -rf $(OUTDIR)
 
-# Clean documentation
-clean-doc:
-	rm -rf $(DOCDIR)
-
-# Clean everything
-clean-all: clean clean-doc
-
 # Generate HTML documentation
 $(DOCDIR)/html/index.html: $(SRCDIR)/*.c $(SRCDIR)/*.h README.md Doxyfile
 	@echo "Generating HTML documentation..."
