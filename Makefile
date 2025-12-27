@@ -42,29 +42,21 @@ clean-doc:
 clean-all: clean clean-doc
 
 # Generate HTML documentation
-$(DOCDIR)/html/index.html: *.c *.h
+$(DOCDIR)/html/index.html: *.c *.h README.md Doxyfile
 	@echo "Generating HTML documentation..."
 	@mkdir -p $(DOCDIR)
-	@(cat Doxyfile 2>/dev/null || doxygen -g - 2>/dev/null) | \
-		sed -e 's|^OUTPUT_DIRECTORY.*|OUTPUT_DIRECTORY = $(DOCDIR)|' \
-		    -e 's|^GENERATE_HTML.*|GENERATE_HTML = YES|' \
-		    -e 's|^GENERATE_LATEX.*|GENERATE_LATEX = NO|' \
-		    -e 's|^HTML_OUTPUT.*|HTML_OUTPUT = html|' \
-		    -e 's|^EXTRACT_ALL.*|EXTRACT_ALL = YES|' \
-		    -e 's|^PROJECT_NAME.*|PROJECT_NAME = "Snake Game"|' \
-		    -e 's|^RECURSIVE.*|RECURSIVE = YES|' | \
-		doxygen -
+	@doxygen Doxyfile
 
 # Documentation target
 doc: $(DOCDIR)/html/index.html
 	@echo "Documentation generated in $(DOCDIR)/html/index.html"
+
+# Publish documentation to GitHub Pages
+publish-doc:
 	@echo "Copying documentation to ../snake-doc..."
 	@mkdir -p ../snake-doc
 	@cp -r $(DOCDIR)/html/* ../snake-doc/
 	@echo "Documentation copied to ../snake-doc"
-
-# Publish documentation to GitHub Pages
-publish-doc:
 	@echo "Committing and pushing documentation..."
 	@cd ../snake-doc && \
 		git add -A && \
