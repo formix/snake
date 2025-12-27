@@ -177,11 +177,13 @@ How to Play</h1>
 <h1><a class="anchor" id="autotoc_md9"></a>
 Project Structure</h1>
 <div class="fragment"><div class="line">.</div>
-<div class="line">├── main.c              # Main game loop and initialization</div>
-<div class="line">├── snake.c             # Snake logic, collision detection, and terminal handling</div>
-<div class="line">├── snake.h             # Snake module header</div>
-<div class="line">├── asciiart.c          # ANSI/VT100 terminal rendering functions</div>
-<div class="line">├── asciiart.h          # ASCII art module header</div>
+<div class="line">├── src/</div>
+<div class="line">│   ├── main.c          # Main game loop and initialization</div>
+<div class="line">│   ├── snake.c         # Snake logic, collision detection, and terminal handling</div>
+<div class="line">│   ├── snake.h         # Snake module header</div>
+<div class="line">│   ├── asciiart.c      # ANSI/VT100 terminal rendering functions</div>
+<div class="line">│   ├── asciiart.h      # ASCII art module header</div>
+<div class="line">│   └── version.h       # Version information</div>
 <div class="line">├── Makefile            # Build configuration</div>
 <div class="line">├── LICENSE.txt         # GNU GPL v3 license</div>
 <div class="line">└── README.md           # This file</div>
@@ -270,7 +272,7 @@ Generate HTML Documentation</h3>
 Code Documentation Style</h2>
 <p>The project uses Doxygen-style comments:</p>
 <div class="fragment"><div class="line"> </div>
-</div><!-- fragment --><p>See <a href="snake.h">snake.h</a> and <a href="asciiart.h">asciiart.h</a> for examples.</p>
+</div><!-- fragment --><p>See <a href="src/snake.h">src/snake.h</a> and <a href="src/asciiart.h">src/asciiart.h</a> for examples.</p>
 <h2><a class="anchor" id="autotoc_md27"></a>
 Development Dependencies</h2>
 <p>The project depends on the following standard Linux libraries:</p><ul>
@@ -301,7 +303,7 @@ Acknowledgments</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Dec 27 2025 05:00:59 for Snake Game by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Dec 27 2025 05:19:56 for Snake Game by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
