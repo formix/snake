@@ -86,11 +86,13 @@ The executable will be created in the `out/` directory as `out/snake`.
 
 ```
 .
-├── main.c              # Main game loop and initialization
-├── snake.c             # Snake logic, collision detection, and terminal handling
-├── snake.h             # Snake module header
-├── asciiart.c          # ANSI/VT100 terminal rendering functions
-├── asciiart.h          # ASCII art module header
+├── src/
+│   ├── main.c          # Main game loop and initialization
+│   ├── snake.c         # Snake logic, collision detection, and terminal handling
+│   ├── snake.h         # Snake module header
+│   ├── asciiart.c      # ANSI/VT100 terminal rendering functions
+│   ├── asciiart.h      # ASCII art module header
+│   └── version.h       # Version information
 ├── Makefile            # Build configuration
 ├── LICENSE.txt         # GNU GPL v3 license
 └── README.md           # This file
@@ -201,7 +203,7 @@ The project uses Doxygen-style comments:
  */
 ```
 
-See [snake.h](snake.h) and [asciiart.h](asciiart.h) for examples.
+See [src/snake.h](src/snake.h) and [src/asciiart.h](src/asciiart.h) for examples.
 
 ### Development Dependencies
 
