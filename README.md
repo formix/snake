@@ -33,8 +33,6 @@ The project uses Make for building and managing the project. Available targets:
 | `make clean` | Remove all build artifacts from the `out/` directory |
 | `make doc` | Generate HTML API documentation to `out/doc/html/` |
 | `make publish-doc` | Commit and push documentation to GitHub Pages (gh-pages branch) |
-| `make clean-doc` | Remove the documentation from `out/doc/` |
-| `make clean-all` | Remove both build artifacts and documentation |
 
 ### Standard Build
 ```bash
