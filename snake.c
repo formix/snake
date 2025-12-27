@@ -270,11 +270,15 @@ clock_t consistent_sleep(long period_ms, clock_t last_time)
 
 void print_score(int playfield_height, int playfield_width, int score, int snake_length)
 {
-    set_position(1, playfield_width + 3);
     set_color(FG_WHITE, BG_BLACK);
-    printf("Length: %d", snake_length);
+    set_position(1, playfield_width + 3);
+    printf("User:   %s", getenv("USER") ? getenv("USER") : "Player");
     set_position(2, playfield_width + 3);
-    printf("Score:  %d", score);
+    printf("Size:   %dx%d", playfield_width, playfield_height);
+    set_position(3, playfield_width + 3);
+    printf("Length: %5d", snake_length);
+    set_position(4, playfield_width + 3);
+    printf("Score:  %5d", score);
     fflush(stdout);
 }
 
@@ -282,11 +286,11 @@ int pick_number_of_segments()
 {
     int r = rand() % 100;
     if (r < 17) {
-        return 1;
+        return 1; // 16%
     } else if (r < 67) {
-        return 2;
+        return 2; // 50%
     } else {
-        return 3;
+        return 3; // 34%
     }
 }
 
@@ -342,6 +346,10 @@ void draw_playfield(int height, int width) {
         printf("|%s|\n", buf);
     }
     printf("+%s+\n", horizontal_line);
+
+    int title_pos = width / 2 - 3;
+    set_position(0, title_pos);
+    printf("~~SNAKE~~");
 
     set_color(FG_WHITE, BG_BLACK);
 }
