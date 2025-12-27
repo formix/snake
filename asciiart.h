@@ -18,6 +18,15 @@
  *
  *****************************************************************************/
 
+/**
+ * @file asciiart.h
+ * @brief ASCII art and ANSI terminal control utilities
+ *
+ * This module provides functions for terminal manipulation using ANSI escape
+ * codes, including cursor positioning, color control, and screen clearing.
+ * It also defines constants for box drawing characters and block elements.
+ */
+
 #ifndef asciiart_H
 #define asciiart_H
 
@@ -79,13 +88,77 @@
 #define BLOCK_SMALL_SQUARE "■"
 #define BLOCK_TINY_SQUARE  "▪"
 
+/**
+ * @brief Set the cursor position in the terminal
+ *
+ * Moves the cursor to the specified row and column using ANSI escape codes.
+ * Coordinates are 0-based but converted to 1-based for ANSI codes.
+ *
+ * @param row The row position (0-based)
+ * @param col The column position (0-based)
+ */
 void set_position(int row, int col);
+
+/**
+ * @brief Set the foreground and background colors
+ *
+ * Sets the text and background colors using ANSI color codes.
+ *
+ * @param fg Foreground color (use FG_* constants)
+ * @param bg Background color (use BG_* constants)
+ */
 void set_color(int fg, int bg);
+
+/**
+ * @brief Hide the terminal cursor
+ *
+ * Makes the cursor invisible using ANSI escape codes.
+ */
 void hide_cursor();
+
+/**
+ * @brief Show the terminal cursor
+ *
+ * Makes the cursor visible using ANSI escape codes.
+ */
 void show_cursor();
+
+/**
+ * @brief Display a character at the specified position with color
+ *
+ * Displays a single character at the given row and column with the specified
+ * foreground color. The background is always set to black. After displaying,
+ * the color is reset to white on black.
+ *
+ * @param row The row position (floating point, converted to int)
+ * @param col The column position (floating point, converted to int)
+ * @param ch The character to display
+ * @param fgcolor The foreground color (use FG_* constants)
+ */
 void display(float row, float col, char ch, int fgcolor);
+
+/**
+ * @brief Erase a character at the specified position
+ *
+ * Replaces the character at the given position with a space character.
+ *
+ * @param row The row position (floating point, converted to int)
+ * @param col The column position (floating point, converted to int)
+ */
 void erease(float row, float col);
+
+/**
+ * @brief Clear the entire terminal screen
+ *
+ * Clears all content from the terminal using ANSI escape codes.
+ */
 void clear_screen();
+
+/**
+ * @brief Move the cursor to the home position
+ *
+ * Moves the cursor to the top-left corner (position 0,0) of the terminal.
+ */
 void go_home();
 
 

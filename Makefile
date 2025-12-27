@@ -4,6 +4,7 @@ CFLAGS = -Wall
 DEBUG_FLAGS = -g -O0
 TARGET = snake
 OUTDIR = out
+DOCDIR = docs
 
 # Check if DEBUG=1 is set
 ifdef DEBUG
@@ -33,8 +34,33 @@ $(OUTDIR)/%.o: %.c | $(OUTDIR)
 clean:
 	rm -rf $(OUTDIR)
 
+# Clean documentation
+clean-doc:
+	rm -rf $(DOCDIR)
+
+# Clean everything
+clean-all: clean clean-doc
+
+# Generate HTML documentation
+$(DOCDIR)/html/index.html: *.c *.h
+	@echo "Generating HTML documentation..."
+	@mkdir -p $(DOCDIR)
+	@(cat Doxyfile 2>/dev/null || doxygen -g - 2>/dev/null) | \
+		sed -e 's|^OUTPUT_DIRECTORY.*|OUTPUT_DIRECTORY = $(DOCDIR)|' \
+		    -e 's|^GENERATE_HTML.*|GENERATE_HTML = YES|' \
+		    -e 's|^GENERATE_LATEX.*|GENERATE_LATEX = NO|' \
+		    -e 's|^HTML_OUTPUT.*|HTML_OUTPUT = html|' \
+		    -e 's|^EXTRACT_ALL.*|EXTRACT_ALL = YES|' \
+		    -e 's|^PROJECT_NAME.*|PROJECT_NAME = "Snake Game"|' \
+		    -e 's|^RECURSIVE.*|RECURSIVE = YES|' | \
+		doxygen -
+
+# Documentation target
+doc: $(DOCDIR)/html/index.html
+	@echo "Documentation generated in $(DOCDIR)/html/index.html"
+
 # Phony targets
-.PHONY: all clean debug
+.PHONY: all clean clean-doc clean-all debug doc
 
 debug:
 	$(MAKE) DEBUG=1

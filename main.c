@@ -24,6 +24,7 @@
 #include <time.h>
 #include <unistd.h>
 
+#include "version.h"
 #include "asciiart.h"
 #include "snake.h"
 
