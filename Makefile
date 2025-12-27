@@ -48,7 +48,7 @@ $(DOCDIR)/html/index.html: *.c *.h README.md Doxyfile
 	@doxygen Doxyfile
 
 # Documentation target
-doc: $(DOCDIR)/html/index.html
+doc: clean-doc $(DOCDIR)/html/index.html
 	@echo "Documentation generated in $(DOCDIR)/html/index.html"
 
 # Publish documentation to GitHub Pages
