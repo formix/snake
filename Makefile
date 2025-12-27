@@ -3,6 +3,7 @@ CC = gcc
 CFLAGS = -Wall
 DEBUG_FLAGS = -g -O0
 TARGET = snake
+SRCDIR = src
 OUTDIR = out
 DOCDIR = $(OUTDIR)/doc
 
@@ -12,8 +13,8 @@ CFLAGS += $(DEBUG_FLAGS)
 endif
 
 # Source files
-SRCS = main.c snake.c asciiart.c
-OBJS = $(SRCS:%.c=$(OUTDIR)/%.o)
+SRCS = $(SRCDIR)/main.c $(SRCDIR)/snake.c $(SRCDIR)/asciiart.c
+OBJS = $(SRCS:$(SRCDIR)/%.c=$(OUTDIR)/%.o)
 
 # Default target
 all: $(OUTDIR)/$(TARGET)
@@ -27,7 +28,7 @@ $(OUTDIR)/$(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@
 
 # Compile source files to object files
-$(OUTDIR)/%.o: %.c | $(OUTDIR)
+$(OUTDIR)/%.o: $(SRCDIR)/%.c | $(OUTDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Clean build artifacts
@@ -42,7 +43,7 @@ clean-doc:
 clean-all: clean clean-doc
 
 # Generate HTML documentation
-$(DOCDIR)/html/index.html: *.c *.h README.md Doxyfile
+$(DOCDIR)/html/index.html: $(SRCDIR)/*.c $(SRCDIR)/*.h README.md Doxyfile
 	@echo "Generating HTML documentation..."
 	@mkdir -p $(DOCDIR)
 	@doxygen Doxyfile
@@ -72,6 +73,6 @@ debug:
 	$(MAKE) DEBUG=1
 
 # Dependencies
-$(OUTDIR)/main.o: main.c snake.h asciiart.h
-$(OUTDIR)/snake.o: snake.c snake.h asciiart.h
-$(OUTDIR)/asciiart.o: asciiart.c asciiart.h
+$(OUTDIR)/main.o: $(SRCDIR)/main.c $(SRCDIR)/snake.h $(SRCDIR)/asciiart.h
+$(OUTDIR)/snake.o: $(SRCDIR)/snake.c $(SRCDIR)/snake.h $(SRCDIR)/asciiart.h
+$(OUTDIR)/asciiart.o: $(SRCDIR)/asciiart.c $(SRCDIR)/asciiart.h
