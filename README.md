@@ -2,6 +2,8 @@
 
 A classic terminal-based Snake game written in C with ANSI/VT100 escape sequences for rendering.
 
+**[📚 API Documentation](https://formix.github.io/snake/)**
+
 ## Features
 
 - 🐍 Classic snake gameplay with smooth movement
