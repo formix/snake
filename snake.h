@@ -135,28 +135,28 @@ Segment* initialize_snake(int start_row, int start_col, size_t initial_length);
 Segment* create_segment(int row, int col);
 
 /**
- * @brief Move the snake's head segment to a new position
+ * @brief Add a new head segment to the snake
  *
  * Creates a new head segment at the specified position and links it
- * to the existing snake.
+ * to the existing snake, becoming the new head.
  *
  * @param head Current head of the snake
- * @param row New row position for the head
- * @param col New column position for the head
+ * @param row Row position for the new head segment
+ * @param col Column position for the new head segment
  * @return Pointer to the new head segment
  */
-Segment* move_head_segment(Segment* head, int row, int col);
+Segment* add_head_segment(Segment* head, int row, int col);
 
 /**
- * @brief Move all tail segments of the snake
+ * @brief Remove the tail segment from the snake
  *
- * Updates the position of all segments of the snake except the head,
- * following the movement of the head segment.
+ * Removes and frees the last segment of the snake, shortening it by one.
+ * This is typically called when the snake moves without growing.
  *
  * @param head Head segment of the snake
  * @param snake_size Total number of segments in the snake
  */
-void move_tail_segments(Segment* head, size_t snake_size);
+void remove_tail_segment(Segment* head, size_t snake_size);
 
 /**
  * @brief Move the snake in the specified direction
