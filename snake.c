@@ -297,15 +297,33 @@ int pick_number_of_segments()
 // Static variables to store terminal state
 static int terminal_initialized = 0;
 
-int read_key()
+void initialize_terminal()
 {
-    // Initialize terminal settings on first call
-    if (!terminal_initialized) {
+    if(!terminal_initialized) {
         static struct termios current_termios;
         tcgetattr(STDIN_FILENO, &current_termios);
         current_termios.c_lflag &= ~(ICANON | ECHO);
         tcsetattr(STDIN_FILENO, TCSAFLUSH, &current_termios);
         terminal_initialized = 1;
+    }
+}
+
+void restore_terminal()
+{
+    if (terminal_initialized) {
+        static struct termios current_termios;
+        tcgetattr(STDIN_FILENO, &current_termios);
+        current_termios.c_lflag |= (ICANON | ECHO);
+        tcsetattr(STDIN_FILENO, TCSANOW, &current_termios);
+        terminal_initialized = 0;
+    }
+}
+
+int read_key()
+{
+    // Initialize terminal settings on first call
+    if (!terminal_initialized) {
+        return -2; // Terminal not initialized
     }
 
     // Check if bytes are available in the keyboard buffer
@@ -316,16 +334,6 @@ int read_key()
     }
 
     return -1; // No key pressed
-}
-
-void restore_terminal() {
-    if (terminal_initialized) {
-        static struct termios current_termios;
-        tcgetattr(STDIN_FILENO, &current_termios);
-        current_termios.c_lflag |= (ICANON | ECHO);
-        tcsetattr(STDIN_FILENO, TCSANOW, &current_termios);
-        terminal_initialized = 0;
-    }
 }
 
 void draw_playfield(int height, int width) {

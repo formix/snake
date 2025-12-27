@@ -41,6 +41,7 @@ int main(int argc, char **argv) {
 
     srand(time(NULL));
 
+    initialize_terminal();
     draw_playfield(playfield_height, playfield_width);
     set_position(playfield_height + 2, 0);
     set_color(FG_WHITE, BG_BLACK);
