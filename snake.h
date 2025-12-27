@@ -189,7 +189,7 @@ void delete_snake(Segment* head);
  * @param count Number of segments to add
  * @return Number of segments successfully added
  */
-int add_segment(Segment* head, int count);
+int add_segments(Segment* head, int count);
 
 /**
  * @brief Check if the snake has collided with a wall

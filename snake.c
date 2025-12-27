@@ -189,7 +189,7 @@ void delete_snake(Segment *head)
     }
 }
 
-int add_segment(Segment *head, int count)
+int add_segments(Segment *head, int count)
 {
     Segment *current = head;
     while (current->next != NULL) {
