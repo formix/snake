@@ -106,10 +106,12 @@ Make Targets</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>make clean</code>   </td><td class="markdownTableBodyNone">Remove all build artifacts from the <code>out/</code> directory    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>make doc</code>   </td><td class="markdownTableBodyNone">Generate HTML API documentation to <code>docs/html/</code>    </td></tr>
+<td class="markdownTableBodyNone"><code>make doc</code>   </td><td class="markdownTableBodyNone">Generate HTML API documentation to <code>out/doc/html/</code>    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>make clean-doc</code>   </td><td class="markdownTableBodyNone">Remove the <code>docs/</code> directory and all documentation    </td></tr>
+<td class="markdownTableBodyNone"><code>make publish-doc</code>   </td><td class="markdownTableBodyNone">Commit and push documentation to GitHub Pages (gh-pages branch)    </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>make clean-doc</code>   </td><td class="markdownTableBodyNone">Remove the documentation from <code>out/doc/</code>    </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>make clean-all</code>   </td><td class="markdownTableBodyNone">Remove both build artifacts and documentation   </td></tr>
 </table>
 <h2><a class="anchor" id="autotoc_md5"></a>
@@ -239,9 +241,9 @@ Generate HTML Documentation</h3>
 <div class="fragment"><div class="line"># Generate documentation</div>
 <div class="line">make doc</div>
 <div class="line"> </div>
-<div class="line"># Documentation will be created in docs/html/index.html</div>
+<div class="line"># Documentation will be created in out/doc/html/index.html</div>
 <div class="line"># Open in browser</div>
-<div class="line">xdg-open docs/html/index.html</div>
+<div class="line">xdg-open out/doc/html/index.html</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md26"></a>
 Code Documentation Style</h2>
 <p>The project uses Doxygen-style comments:</p>
