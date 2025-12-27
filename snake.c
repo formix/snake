@@ -116,7 +116,7 @@ Segment *create_segment(int row, int col)
 }
 
 
-Segment *draw_head_segment(Segment *head, int row, int col)
+Segment *move_head_segment(Segment *head, int row, int col)
 {
     Segment *new_segment = create_segment(row, col);
     if (new_segment == NULL) {
@@ -128,7 +128,7 @@ Segment *draw_head_segment(Segment *head, int row, int col)
 }
 
 
-void draw_tail_segments(Segment *head, size_t snake_size)
+void move_tail_segments(Segment *head, size_t snake_size)
 {
     if (head == NULL || head->next == NULL) {
         return; // List is empty or has only one segment
@@ -153,7 +153,7 @@ void draw_tail_segments(Segment *head, size_t snake_size)
 }
 
 
-Segment *update_snake(Segment *head, Direction dir, size_t snake_size)
+Segment *move_snake(Segment *head, Direction dir, size_t snake_size)
 {
     int row = head->row;;
     int col = head->col;
@@ -174,8 +174,8 @@ Segment *update_snake(Segment *head, Direction dir, size_t snake_size)
             break;
     }
 
-    head = draw_head_segment(head, row, col);
-    draw_tail_segments(head, snake_size);
+    head = move_head_segment(head, row, col);
+    move_tail_segments(head, snake_size);
     return head;
 }
 

@@ -109,7 +109,7 @@ int main(int argc, char **argv) {
         if (direction_changed || time_counter >= 250) {
             direction_changed = false;
             time_counter = 0;
-            snake_head = update_snake(snake_head, current_direction, snake_length);
+            snake_head = move_snake(snake_head, current_direction, snake_length);
             if (check_wall_collision(snake_head, playfield_height, playfield_width)) {
                 game_over = true;
             }
