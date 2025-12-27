@@ -56,6 +56,7 @@ publish-doc:
 	@echo "Copying documentation to ../snake-doc..."
 	@mkdir -p ../snake-doc
 	@cp -r $(DOCDIR)/html/* ../snake-doc/
+	@cp LICENSE.txt ../snake-doc/
 	@echo "Documentation copied to ../snake-doc"
 	@echo "Committing and pushing documentation..."
 	@cd ../snake-doc && \
